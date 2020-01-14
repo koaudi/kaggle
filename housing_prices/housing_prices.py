@@ -82,9 +82,6 @@ df_train = df_train.drop((missing_data[missing_data['Total'] > 1]).index,1)
 df_train = df_train.drop(df_train.loc[df_train['Electrical'].isnull()].index)
 df_train.isnull().sum().max() #just checking that there's no missing data missing...	
 
-
-
-
 #standardizing data
 saleprice_scaled = StandardScaler().fit_transform(df_train['SalePrice'][:,np.newaxis]);
 low_range = saleprice_scaled[saleprice_scaled[:,0].argsort()][:10]
@@ -93,7 +90,6 @@ print('outer range (low) of the distribution:')
 print(low_range)
 print('\nouter range (high) of the distribution:')
 print(high_range)
-
 
 
 #bivariate analysis saleprice/grlivarea
